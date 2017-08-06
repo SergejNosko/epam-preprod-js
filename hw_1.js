@@ -1,6 +1,10 @@
 //task 1
 const PI = '3.14';
 function circle(littleR, bigR) {
+    if(bigR < littleR) {
+        console.log('error: inner radius bigger than outer radius');
+        return;
+    }
     console.log(`circle area with inner radius ${littleR} and outer radius ${bigR}:  ${PI * (bigR * bigR - littleR * littleR)}`);
 }
 
@@ -22,6 +26,7 @@ function points(peaks) {
     let sideY = peaks[1].y - peaks[0].y;
     return (sideX - 1) * (sideY - 1);
 }
+console.log('Rectangle points:');
 console.table(peaks);
 console.log('Amount of inner point of the rectangle: ', points(peaks));
 
